@@ -1177,14 +1177,15 @@
       </div>
 
       <div class="contact-form reveal">
+        <form action="https://formspree.io/f/mbdbogdg" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Prénom</label>
-            <input type="text" class="form-input" placeholder="Jean">
+            <input type="text" class="form-input" name="prenom" placeholder="Jean" required>
           </div>
           <div class="form-group">
             <label class="form-label">Nom</label>
-            <input type="text" class="form-input" placeholder="Tremblay">
+            <input type="text" class="form-input" name="nom" placeholder="Tremblay" required>
           </div>
         </div>
         <div class="form-row">
@@ -1194,12 +1195,12 @@
           </div>
           <div class="form-group">
             <label class="form-label">Courriel</label>
-            <input type="email" class="form-input" placeholder="vous@exemple.com">
+            <input type="email" class="form-input" name="email" placeholder="vous@exemple.com" required>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Type de situation</label>
-          <select class="form-select form-input">
+          <select class="form-select form-input" name="type_situation">
             <option value="">— Sélectionnez —</option>
             <option>Conduite avec capacités affaiblies (CFA)</option>
             <option>Délit de fuite</option>
@@ -1216,9 +1217,10 @@
         </div>
         <div class="form-group">
           <label class="form-label">Décrivez brièvement votre situation</label>
-          <textarea class="form-textarea" placeholder="Expliquez ce qui s'est passé. Tout ce que vous me dites est confidentiel."></textarea>
+          <textarea class="form-textarea" name="message" placeholder="Expliquez ce qui s'est passé. Tout ce que vous me dites est confidentiel." required></textarea>
         </div>
-        <button class="form-submit" onclick="handleSubmit()">Envoyer ma demande →</button>
+        <button type="submit" class="form-submit">Envoyer ma demande →</button>
+        </form>
         <p class="disclaimer">
           ⚠️ Ce formulaire ne constitue pas un mandat. Toute communication avec Me Beaudin est protégée 
           par le secret professionnel. Vos informations ne seront jamais partagées.
@@ -1254,10 +1256,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  function handleSubmit() {
-    alert('Merci pour votre message. Me Beaudin communiquera avec vous dans les plus brefs délais.\n\nSi votre situation est urgente, appelez directement au 514 970-9131.');
-  }
 
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
